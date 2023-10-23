@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
@@ -10,13 +10,14 @@ async function initializeApp() {
   const preloadedState = {};
   const store = configureAppStore(preloadedState);
 
-  ReactDOM.render(
+  const container = document.getElementById('root') || document.body;
+  const root = createRoot(container);
+  root.render(
     <Provider store={store}>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </Provider>,
-  document.getElementById('root')
+    </Provider>
   )
 }
 
