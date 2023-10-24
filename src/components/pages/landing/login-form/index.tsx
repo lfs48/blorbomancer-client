@@ -8,7 +8,7 @@ export default function LoginForm({...props}) {
     const [inputs, setInputs] = useState({
         username: '',
         password: ''
-    })
+    });
 
     return(
         <S.Root {...props}>
@@ -23,7 +23,9 @@ export default function LoginForm({...props}) {
                 value={inputs.password}
                 onChange={(e)=>handleInput(e, 'password', inputs, setInputs)}
             />
-            <S.FormButton>
+            <S.FormButton
+                disabled={inputs.username.length < 1 || inputs.password.length < 1}
+            >
                 <div>Log In</div>
             </S.FormButton>
             <S.Line>
