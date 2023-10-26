@@ -8,6 +8,7 @@ interface InputProps {
     color?: Color;
     type?: 'text' | 'password';
     maxLength?: number;
+    hasErrors?: boolean;
     [prop: string]: any;
 }
 
@@ -17,15 +18,18 @@ export default function Input({
     color=Color.Purple,
     type='text',
     maxLength=20,
+    hasErrors=false,
     ...props
 }: InputProps) {
+
     return(
         <S.Root
             type={type}
             maxLength={maxLength}
             value={value}
             onChange={onChange}
-            $color={color}
+            $color={hasErrors ? Color.Red : color}
+            $hasErrors={hasErrors}
             {...props}
         />
     )
