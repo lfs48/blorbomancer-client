@@ -4,7 +4,7 @@ import Panel from "@/components/UI/common/panel";
 import tw from "tailwind-styled-components";
 
 export const Root = tw(Panel)`
-    w-full
+    w-[25rem]
     space-y-4
     p-6
 `

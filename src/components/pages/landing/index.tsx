@@ -1,13 +1,13 @@
 import * as S from './styled';
 import LoginForm from './login-form';
+import Info from './info';
 
 export default function Landing() {
 
     return(
         <S.Root>
-            <S.Left>
-                <LoginForm />
-            </S.Left>
+            <LoginForm />
+            <Info />
         </S.Root>
     )
 }

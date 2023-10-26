@@ -4,11 +4,13 @@ import tw from 'tailwind-styled-components';
 
 export const Root = tw(Page)`
     flex
+    justify-center
+    items-center
+    space-x-32
 `
 
 export const Left = tw.div`
     w-[25rem]
-    h-full
     flex
     items-center
 `
