@@ -4,6 +4,8 @@ import {
     BrowserRouter
  } from "react-router-dom";
 import Landing from "@pages/landing";
+import Register from "../pages/register";
+import AuthRoute from "./auth.route";
 
 export default function AppRoutes() {
     return(
@@ -11,7 +13,19 @@ export default function AppRoutes() {
             <Routes>
                 <Route 
                     path="/"
-                    element={<Landing />}
+                    element={
+                        <AuthRoute>
+                            <Landing />
+                        </AuthRoute>
+                    }
+                />
+                <Route 
+                    path="/register"
+                    element={
+                        <AuthRoute>
+                            <Register />
+                        </AuthRoute>
+                    }
                 />
             </Routes>
         </BrowserRouter>
