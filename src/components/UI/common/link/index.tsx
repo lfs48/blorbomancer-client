@@ -1,5 +1,3 @@
-import { ReactNode, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import * as S from './styled';
 
 interface LinkProps {
@@ -12,15 +10,9 @@ export default function Link({
     ...props
 }: LinkProps) {
 
-    const navigate = useNavigate();
-
-    const handleLink = useCallback( () => {
-        navigate(to);
-    }, [to])
-
     return(
         <S.Root
-            href={to}
+            to={to}
             {...props}
         />
     )
