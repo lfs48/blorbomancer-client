@@ -1,5 +1,5 @@
 import Button from "@/components/UI/common/button";
-import Input from "@/components/UI/common/input";
+import Field from "@/components/UI/common/field";
 import Panel from "@/components/UI/common/panel";
 import tw from "tailwind-styled-components";
 
@@ -9,7 +9,7 @@ export const Root = tw(Panel)`
     p-6
 `
 
-export const FormInput = tw(Input)`
+export const FormInput = tw(Field)`
     w-full
 `
 
