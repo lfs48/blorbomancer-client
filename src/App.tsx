@@ -1,4 +1,5 @@
 import Routes from "@components/routes";
+import { Toaster } from "react-hot-toast";
 import tw from "tailwind-styled-components";
 
 const Root = tw.div`
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <Root>
+      <Toaster />
       <Routes />
     </Root>
   )
