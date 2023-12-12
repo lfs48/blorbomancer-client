@@ -5,6 +5,7 @@ import Link from '@/components/UI/common/link';
 import { useLoginMutation } from '@/api/auth.api';
 import { useDispatch } from 'react-redux';
 import ErrorList from '@/components/UI/common/error-list';
+import toast from 'react-hot-toast';
 
 const initialInputs = {
     username: '',
@@ -31,7 +32,9 @@ export default function LoginForm({...props}) {
         })
         .catch( (err) => {
             const otherErrors = handleErrors(err, errors, setErrors);
-            console.log(otherErrors);
+            if (otherErrors) {
+                toast.error("Something went wrong, please try again later.");
+            }
         })
     }
 
